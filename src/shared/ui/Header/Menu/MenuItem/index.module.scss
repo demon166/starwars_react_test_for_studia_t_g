@@ -1,0 +1,26 @@
+@import "src/shared/assets/styles";
+
+.menu__item{
+  font: $menu-item-font;
+  color: $color-green;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 3px;
+    background-color: $color-dirty-light-green;
+    border-radius: 5px;
+    bottom: -30px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all .3s ease-in-out;
+  }
+  &_active{
+    &::after{
+      opacity: 1;
+      bottom: -15px;
+    }
+  }
+}

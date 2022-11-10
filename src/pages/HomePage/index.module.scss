@@ -1,0 +1,13 @@
+@import "src/shared/assets/styles";
+
+.content{
+  max-width: 30%;
+}
+
+:global #root{
+  background-image: $gradient-dark-blue-dark-violet;
+}
+
+.homePage{
+  color: $color-white;
+}

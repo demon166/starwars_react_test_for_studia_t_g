@@ -1,7 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { swApi } from './slice/swapi/service';
 
 export const store = configureStore({
   reducer: {
+    [swApi.reducerPath]: swApi.reducer,
   },
 });
 

@@ -1,21 +1,21 @@
-import HomePage from 'pages/HomePage';
-import CharactersPage from 'pages/CharactersPage';
+import { PublicRouteEnum } from './RouteEnums';
+import { CharactersPage, HomePage } from 'pages';
 
-export type RoutingConfigType = {
+export type TPublicRouteConfig = {
   label: string;
-  path: string;
+  to: PublicRouteEnum;
   element: () => JSX.Element;
-}[];
+};
 
-export const PublicRouteConfig: RoutingConfigType = [
+export const PublicRouteConfig: TPublicRouteConfig[] = [
   {
     label: 'Home',
-    path: '/',
+    to: PublicRouteEnum.home,
     element: HomePage,
   },
   {
     label: 'Characters',
-    path: '/characters',
+    to: PublicRouteEnum.characters,
     element: CharactersPage,
   },
 ];

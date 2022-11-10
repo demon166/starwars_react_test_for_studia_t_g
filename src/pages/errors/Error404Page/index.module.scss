@@ -1,0 +1,31 @@
+@import "src/shared/assets/styles";
+
+.wrap{
+  height: 100%;
+  background-color: $color-dark-violet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h1{
+    margin: 0;
+    font: 700 40vw/1em 'Karla', sans-serif;
+    display: flex;
+    align-items: center;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      background-image: url("/shared/assets/img/death_star.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

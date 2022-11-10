@@ -1,6 +1,8 @@
-@import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+//@import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+@import "normalize.css/normalize.css";
 @import "primereact/resources/primereact.min.css";                  //core css
 @import "primeicons/primeicons.css";                                //icons
 @import './fonts.scss';
 @import './vars.scss';
 @import './mixins.scss';
+@import "./styles.scss";

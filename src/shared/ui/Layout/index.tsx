@@ -1,15 +1,14 @@
 import React from 'react';
-import { Menubar } from 'primereact/menubar';
 import { Outlet } from 'react-router-dom';
-import { PublicRouteConfig } from 'app/routing/PublicRouteConfig';
+import Header from '../Header';
 
-const DefaultLayout = () => {
-  return (
-    <div>
-      <Menubar model={PublicRouteConfig}/>
+const Layout = () => (
+  <>
+    <Header />
+    <main className="container">
       <Outlet />
-    </div>
-  );
-};
+    </main>
+  </>
+);
 
-export default DefaultLayout;
+export default Layout;

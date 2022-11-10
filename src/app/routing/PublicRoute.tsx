@@ -1,10 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Error404 from 'pages/errors/Error404';
+import { Error404Page } from 'pages';
+import { Layout } from 'shared/ui';
+import { PublicRouteConfig } from './PublicRouteConfig';
 
 const PublicRoute = () => (
   <Routes>
-    <Route path="*" element={<Error404 />} />
+    <Route path="/" element={<Layout />}>
+      {
+          PublicRouteConfig.map(({ to, element }) => (
+            <Route path={to} element={element()} key={to} errorElement={<Error404Page />} />
+          ))
+        }
+    </Route>
+    <Route path="*" element={<Error404Page />} />
   </Routes>
 );
 

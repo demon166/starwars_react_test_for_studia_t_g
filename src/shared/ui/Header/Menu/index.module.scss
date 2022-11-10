@@ -1,0 +1,11 @@
+.menu{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+
+  &__item{
+    margin-inline-start: 35px;
+    margin-inline-end: 35px;
+  }
+}
+
