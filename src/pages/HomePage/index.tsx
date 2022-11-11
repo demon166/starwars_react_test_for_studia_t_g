@@ -8,9 +8,9 @@ const HomePage = () => (
   <section className={styles.homePage}>
     <div className={styles.content}>
       <h1>
-        <strong>Find</strong>
+        <strong>Find </strong>
         all your favorite
-        <strong>character</strong>
+        <strong> character</strong>
       </h1>
       <h2>You can find out all the information about your favorite characters</h2>
       <Link to={PublicRouteEnum.characters}>
