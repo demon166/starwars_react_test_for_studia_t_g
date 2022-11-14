@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Error404Page } from 'pages';
 import { Layout } from 'shared/ui';
 import { PublicRouteConfig } from './PublicRouteConfig';
 
-const PublicRoute = () => (
+const PublicRoute: FC = () => (
   <Routes>
     <Route path="/" element={<Layout />}>
       {

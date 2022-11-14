@@ -2,19 +2,32 @@
 
 .content{
   max-width: 500px;
-}
-
-:global #root{
-  background-image: $gradient-dark-blue-dark-violet;
+  &:after{
+    content: "";
+    display: block;
+    background-image: url('/shared/assets/img/yoda.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 670px;
+    height: 600px;
+    @include media-breakpoint-down(xxl){
+      width: 550px;
+    }
+    @include media-breakpoint-down(xl){
+      width: 400px;
+    }
+    position: absolute;
+    top: 100px;
+    left: 50%;
+  }
 }
 
 .homePage{
   color: $color-white;
   padding-block-start: 120px;
+  position: relative;
+  background-image: $gradient-dark-blue-dark-violet;
   padding-block-end: 120px;
-  background-image: url('/shared/assets/img/yoda.png');
-  background-repeat: no-repeat;
-  background-position: right center;
   h1{
     font: $h1;
     letter-spacing: 4px;
@@ -23,7 +36,9 @@
   }
   h2{
     font: $h2;
-    margin-block-end: 65px;
+  }
+  .btnWrap{
+    margin-block-start: 65px;
   }
 
 }

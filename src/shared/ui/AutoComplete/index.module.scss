@@ -1,0 +1,43 @@
+@import "src/shared/assets/styles";
+
+:global(.p-autocomplete){
+  width: 100%;
+  :global(.p-inputtext){
+    outline: none;
+    border: none;
+    background: $color-gray-400;
+    box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+    border-radius: 40px;
+    width: 100%;
+    padding-block-start: 15px;
+    padding-block-end: 15px;
+    padding-inline-start: 30px;
+    &::placeholder{
+      color:rgba($color-gray-900, 0.8);
+    }
+    &:focus{
+      outline: none;
+      border: none;
+    }
+  }
+  &-panel{
+    margin-block-start: 3px;
+    padding: 5px 20px;
+  }
+  &-items{
+    display: block;
+    background-color: $color-gray-400;
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
+    border-radius: 8px;
+    padding: 10px 10px !important;
+  }
+
+  &-item{
+    padding: 5px 10px;
+    border-radius: 4px;
+    &:hover{
+      background-color: $color-dirty-light-green;
+    }
+  }
+}
+
