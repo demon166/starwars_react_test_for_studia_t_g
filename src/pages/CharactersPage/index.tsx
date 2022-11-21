@@ -1,5 +1,6 @@
 import React from 'react';
-import AutoComplete from '../../shared/ui/AutoComplete';
+import AutoComplete from 'shared/ui/AutoComplete';
+import Cards from './Cards';
 
 const CharactersPage = () => {
   console.log(1);
@@ -7,6 +8,7 @@ const CharactersPage = () => {
     <div className="container">
       <h1>Страница характеристик</h1>
       <AutoComplete placeholder="find..." />
+      <Cards />
     </div>
   );
 };

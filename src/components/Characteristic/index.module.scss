@@ -1,0 +1,26 @@
+@import "src/shared/assets/styles/vars";
+
+.characteristic{
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+  border-radius: 11px;
+  display: inline-flex;
+  padding-inline: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 16px;
+  color: $color-gray-900;
+  font: $font-characteristic-title;
+}
+
+.birth_year{
+
+}
+
+.hermaphrodite{
+  background: #F5DB13;
+}
+
+.gender{
+
+}
+

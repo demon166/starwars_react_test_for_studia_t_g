@@ -7,20 +7,10 @@ import {
 import { useDebounce } from '../../../hooks/useDebounce';
 import styles from './index.module.scss';
 
-const AutoComplete = ({ placeholder }: AutoCompleteProps) => {
-  console.log(1);
+const AutoComplete = ({ placeholder, suggestions, completeMethod }: AutoCompleteProps) => {
   const [selectedCountry, setSelectedCountry] = useState<string>();
-  const [filteredCountries, setFilteredCountries] = useState<any>();
   const textForSearch = useDebounce(selectedCountry, 2000);
-  const searchCountry = () => {
-    setFilteredCountries([
-      { name: 'Afghanistan', code: 'AF' },
-      { name: 'Afghanistan', code: 'AF' },
-      { name: 'Afghanistan', code: 'AF' },
-    ]);
-  };
   useEffect(() => {
-    searchCountry();
   }, [textForSearch]);
   const changeHandle = (e: AutoCompleteChangeParams) => setSelectedCountry(e.value);
   return (
@@ -28,8 +18,8 @@ const AutoComplete = ({ placeholder }: AutoCompleteProps) => {
       <AutoCompletePrime
         className={styles.autocomplete}
         value={selectedCountry}
-        suggestions={filteredCountries}
-        completeMethod={searchCountry}
+        suggestions={suggestions}
+        completeMethod={completeMethod}
         delay={500}
         field="name"
         onChange={changeHandle}

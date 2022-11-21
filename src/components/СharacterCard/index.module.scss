@@ -1,0 +1,13 @@
+@import "src/shared/assets/styles";
+
+.card{
+  filter: drop-shadow(4px 4px 4px rgba(33, 33, 33, 0.1));
+  background: $color-gray-200;
+  border-radius: 8px;
+  padding: 5px 25px 10px;
+
+  .characteristicRoundBlock{
+    display: flex;
+    gap: 15px;
+  }
+}
