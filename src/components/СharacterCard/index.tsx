@@ -21,12 +21,20 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
     <div className={styles.card}>
       <h3>{ name }</h3>
       <div className={styles.characteristicRoundBlock}>
-        <CharacteristicRound value={height} title="height" />
-        <CharacteristicRound value={mass} title="mass" />
+        {
+          height && height !== 'unknown' && height !== 'huwhorwhooohwh' && <CharacteristicRound value={height} title="height" />
+        }
+        {
+          mass && mass !== 'unknown' && mass !== 'huwhorwhooohwh' && <CharacteristicRound value={mass} title="mass" />
+        }
       </div>
       <div className={styles.characteristicBlock}>
-        <CharacteristicGender gender={gender} />
-        <CharacteristicAge age={birthYear} />
+        {
+          gender !== 'n/a' && (<CharacteristicGender gender={gender} />)
+        }
+        {
+          birthYear !== 'unknown' && (<CharacteristicAge age={birthYear} />)
+        }
       </div>
     </div>
   );

@@ -1,5 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { TCharacter, TCharacterFilterSearchProps } from './types';
+import {
+  TCharacter,
+  TCharacterFilterSearchProps,
+  TCharacterWookiee,
+  TSwApiDataRequest,
+  TSwApiDataRequestWookiee,
+} from './types';
+import { isWookieeResponse } from 'shared/typeGuards/wookieeLang';
+import { wookieeToHuman } from '../../../shared/helpers/wookieeToHumanResponse';
 
 export const swApi = createApi({
   reducerPath: 'tagsApi',
@@ -9,14 +17,25 @@ export const swApi = createApi({
   tagTypes: ['Characters'],
   endpoints: (builder) => ({
     getCharacters: builder.query<TCharacter[], TCharacterFilterSearchProps | void>({
-      query: (search) => ({
-        url: '/api/v1.0/task/tags',
+      query: ({ search, page, format }: TCharacterFilterSearchProps) => ({
+        url: '/people',
         params: {
           search,
+          page,
+          format,
         },
       }),
-      transformResponse(baseQueryReturnValue: { data: TCharacter[] }) {
-        return baseQueryReturnValue.data;
+      transformErrorResponse: (response) => {
+        if (typeof response?.data === 'string') {
+          return wookieeToHuman(JSON.parse(response?.data?.replaceAll('whhuanan', 'null')).rcwochuanaoc);
+        }
+      },
+      transformResponse: (baseQueryReturnValue: TSwApiDataRequest<TCharacter>
+      | TSwApiDataRequestWookiee<TCharacterWookiee>) => {
+        if (isWookieeResponse(baseQueryReturnValue)) {
+          return wookieeToHuman(baseQueryReturnValue.rcwochuanaoc);
+        }
+        return baseQueryReturnValue.results;
       },
       providesTags: (result) =>
         (result

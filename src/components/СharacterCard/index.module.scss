@@ -9,5 +9,10 @@
   .characteristicRoundBlock{
     display: flex;
     gap: 15px;
+    margin-block-end: 10px;
+  }
+  .characteristicBlock{
+    display: flex;
+    gap: 5px;
   }
 }
